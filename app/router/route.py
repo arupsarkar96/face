@@ -51,6 +51,8 @@ async def case_fetch_matches(case_id: str,current_user=Depends(get_current_user)
             "matched_name": match.matched_name,
             "similarity": match.similarity,
             "source_photo": match.source_photo,
-            "matched_photo": match.matched_photo
+            "matched_photo": match.matched_photo,
+            "matched_phone": match.matched_phone,
+            "matched_address": match.matched_address
         })
     return response

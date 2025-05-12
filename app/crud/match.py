@@ -1,6 +1,4 @@
-# app/crud/match.py
 
-from uuid import UUID
 from sqlalchemy.orm import Session, aliased
 from app.models.case import Case
 from app.models.match import Match
@@ -41,6 +39,8 @@ async def crud_get_matches(db: Session, case_id: str):
             matched_case.photo.label("matched_photo"),
             matched_case.name.label("matched_name"),
             matched_case.id.label("matched_id"),
+            matched_case.phone.label("matched_phone"),
+            matched_case.address.label("matched_address")
         )
         .join(source_case, source_case.id == Match.source_case_id)
         .join(matched_case, matched_case.id == Match.matched_case_id)
