@@ -6,7 +6,7 @@ APP_NAME="fastapi"
 APP_DIR="$PWD"
 VENV_DIR="$APP_DIR/venv"
 USER=$(whoami)
-PYTHON_VERSION="3.10"
+PYTHON_VERSION="3.12"
 PYTHON_BIN="/usr/bin/python${PYTHON_VERSION}"
 DEBIAN_FRONTEND=noninteractive
 
