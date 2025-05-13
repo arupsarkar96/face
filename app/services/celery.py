@@ -1,20 +1,22 @@
 
+import faiss
+import numpy as np
+import logging
+
 from sqlalchemy.orm import Session
 from app.core.celery import app
 from app.db.session import SessionLocal
 from app.models.case import Case
 from app.crud.match import crud_create_match  # Assuming you have this
 
-import faiss
-import numpy as np
-import logging
+
 
 from app.models.user import User
 from app.services.firebase import firebase_send_to_token
 
 # Constants
 EMBEDDING_DIM = 128
-BATCH_SIZE = 2
+BATCH_SIZE = 250
 MATCH_THRESHOLD = 0.5  # Cosine similarity threshold (0.5 = 50%)
 
 # Setup FAISS
